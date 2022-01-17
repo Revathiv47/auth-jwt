@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [tempQuote, setTempQuote] = useState("");
 
   async function populateQuote() {
-    const req = await fetch("https://jwtauthen.herokuapp.com", {
+    const req = await fetch("https://jwtauthen.herokuapp.com/api/quote", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
@@ -29,7 +29,7 @@ const Dashboard = () => {
   async function updateQuote(event) {
     event.preventDefault();
 
-    const req = await fetch("https://jwtauthen.herokuapp.com", {
+    const req = await fetch("https://jwtauthen.herokuapp.com/api/quote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

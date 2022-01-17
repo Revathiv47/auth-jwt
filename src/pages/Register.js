@@ -15,7 +15,7 @@ function Register() {
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('https://jwtauthen.herokuapp.com', {
+		const response = await fetch('https://jwtauthen.herokuapp.com/api/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function Register() {
 		const data = await response.json()
 
 		if (data.status === 'ok') {
-			alert('Registered successful')
+			alert(' successful')
 			navigate.push('/login')
 		}
 	}
