@@ -15,7 +15,7 @@ function Register() {
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('https://jwtauthen.herokuapp.com/api/register', {
+		const response = await fetch('https://jwtauthen.herokuapp.com/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -24,6 +24,7 @@ function Register() {
 				name,
 				email,
 				password,
+        confirmpassword,
 			}),
 		})
 

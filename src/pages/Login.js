@@ -10,7 +10,7 @@ function Login() {
 	async function loginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('https://jwtauthen.herokuapp.com/api/login', {
+		const response = await fetch('https://jwtauthen.herokuapp.com/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
