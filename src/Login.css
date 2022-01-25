@@ -33,16 +33,7 @@
     flex-direction: column;
     margin: 20px;
   }
-  label,
-input {
-  display: block;
-  width: 80%;
-}
-
-label {
-  margin-bottom: 5px;
-  height: 22px;
-}
+  
 
 input {
   margin-bottom: 20px;
