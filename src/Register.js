@@ -14,7 +14,8 @@ function Register() {
         console.log({ username, password, confirmpassword })
         try {
             await axios.post(`${env.api}/register`, { username, password });
-            navigate.push("/login")
+            alert("Registered successfully");
+            navigate("/login")
         } catch (error) {
             console.log(error)
         }
