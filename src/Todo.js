@@ -68,7 +68,7 @@ function Todo() {
         <div className="container">
           <button className="btn btn-primary" onClick={() => {
           window.localStorage.removeItem("app_token");
-          navigate.push("/login")
+          navigate("/login")
         }}>Logout</button>
       <div className="row">
         <h2>To Do</h2>

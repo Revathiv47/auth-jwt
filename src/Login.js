@@ -15,7 +15,8 @@ function Login() {
             let logindata = await axios.post(`${env.api}/login`, { username, password })
             console.log(logindata)
             window.localStorage.setItem("app_token",logindata.data.token)
-            navigate.push("/todo")
+            alert("logined successfully");
+            navigate("/todo")
         } catch (error) {
             console.log(error)
         }

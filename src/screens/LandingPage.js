@@ -9,8 +9,8 @@ function LandingPage() {
                 <Row>
                    <div className="intro-text">
                        <div>
-                           <h1 className="title">Welcome to Note Zipper</h1>
-                           <p className="subtitle">List your Notes!</p>
+                           <h1 className="title">Welcome to TODO App</h1>
+                           <p className="subtitle">List your Tasks!</p>
                        </div>
                        <div className="buttonContainer">
                            <a href ='/login'>
