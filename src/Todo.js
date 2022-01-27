@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from 'react';
 import env from './settings';
 import { useNavigate } from 'react-router-dom';
+import './Todo.css';
 
 function Todo() {
     const [toDoList, setToDo] = useState([]);
@@ -66,20 +67,29 @@ function Todo() {
   }
     return (
         <div className="container">
-          <button className="btn btn-primary" onClick={() => {
+          <button className='logout-button' onClick={() => {
           window.localStorage.removeItem("app_token");
           navigate("/login")
         }}>Logout</button>
-      <div className="row">
-        <h2>To Do</h2>
+      <div className='todo-form'>
+        <h1>What's the Plan for Today?</h1>
         
-        <div className="col-lg-12">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" value={task} onChange={e => setTask(e.target.value)} placeholder="Task..." aria-label="Recipient's username" aria-describedby="button-addon2" />
-            <button onClick={handleCreateTask} class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-          </div>
+        <div className="col-lg-6">
+          <div className='todo-form'>
+            <input
+            placeholder='Add a todo'
+            value={task}
+            onChange={e => setTask(e.target.value)}
+            type="text" 
+            className='todo-input'
+            
+          />
+          <button onClick={handleCreateTask} className='todo-button'>
+            Add todo
+          </button>
+             </div>
         </div>
-        <div className="col-lg-12">
+        <div className="col-lg-6">
           <ul class="list-group">
             {
               toDoList.map((item) => {

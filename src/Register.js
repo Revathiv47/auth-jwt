@@ -26,7 +26,7 @@ function Register() {
             <form onSubmit={(e) => {
                 handleSubmit(e)
             }} className="register-screen__form" >
-                <h1 class="h3 mb-3 fw-normal">Please Register</h1>
+                <h2 class="h3 mb-3 fw-normal">Register</h2>
 
                 <div class="form-floating">
                     <input type="email" value={username} onChange={e => setusername(e.target.value)} class="form-control" id="floatingInput" placeholder="name@example.com" />
