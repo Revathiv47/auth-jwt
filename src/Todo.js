@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import env from './settings';
 import { useNavigate } from 'react-router-dom';
 import './Todo.css';
+import { RiCloseCircleLine } from 'react-icons/ri';
+
 
 function Todo() {
     const [toDoList, setToDo] = useState([]);
@@ -66,11 +68,13 @@ function Todo() {
     }
   }
     return (
-        <div className="container">
-          <button className='logout-button' onClick={() => {
+      <>
+       <button className='logout-button' onClick={() => {
           window.localStorage.removeItem("app_token");
           navigate("/login")
         }}>Logout</button>
+        <div className="todo-app" >
+         
       <div className='todo-form'>
         <h1>What's the Plan for Today?</h1>
         
@@ -89,14 +93,18 @@ function Todo() {
           </button>
              </div>
         </div>
-        <div className="col-lg-6">
+        <div className="list-groups col-lg-6">
           <ul class="list-group">
             {
               toDoList.map((item) => {
-                return <li class="list-group-item justify-content-between align-items-center">
-                  <input class="form-check-input me-1" checked={item.status} type="checkbox" value="" aria-label="..." onChange={(e) => handleCHange(e, item._id)} />
+                return <li className = "todo-row">
                   <span style={{ textDecoration: item.status ? "line-through" : "" }}>{item.message}</span>
-                  <span class="badge bg-primary ml-4" onClick={() => handleDelete(item._id)}>X</span>
+                  <span className='icons'>
+        <RiCloseCircleLine
+          onClick={() => handleDelete(item._id)}
+          className='delete-icon'
+        />
+        </span>
                 </li>
               })
             }
@@ -104,6 +112,11 @@ function Todo() {
         </div>
       </div>
     </div>
+
+    
+
+
+    </>
     )
 }
 
